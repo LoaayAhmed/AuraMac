@@ -1,0 +1,28 @@
+<div class="container my-5" *ngIf="product">
+  <div class="row align-items-center gy-4">
+    <div class="col-12 col-md-6 text-center">
+      <img [src]="product.imageUrl" class="img-fluid product-img" alt="{{ product.title }}" />
+    </div>
+    <div class="col-12 col-md-6">
+      <h2 class="product-title">{{ product.title }}</h2>
+      <ul class="product-details list-unstyled">
+        <li><strong>Category:</strong> {{ product.category }}</li>
+        <li><strong>Description:</strong> {{ product.description }}</li>
+        <li>
+          <strong>Price:</strong>
+          <span class="text-accent">{{ product.price }} EGP</span>
+        </li>
+        <li>
+          <strong>Available:</strong>
+          <span [ngClass]="{ 'text-accent': product.quantity > 0, 'text-danger': product.quantity === 0 }">
+            {{ product.quantity > 0 ? product.quantity : 'Out of Stock' }}
+          </span>
+        </li>
+      </ul>
+    <button *ngIf="product.quantity > 0"
+        (click)="addToCart()"
+        class="btn btn-accent mt-3">
+  Add to Cart
+</button>   </div>
+  </div>
+</div>

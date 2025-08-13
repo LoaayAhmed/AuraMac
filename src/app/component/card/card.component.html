@@ -1,0 +1,35 @@
+<div class="card product-card h-100 animate-fade-in">
+  <a [routerLink]="['/product', product.id]" class="product-image-wrapper">
+    <img 
+      [src]="product.imageUrl"
+      class="card-img-top product-img"
+      alt="{{ product.title }}"
+    />
+  </a>
+  <div class="card-body d-flex flex-column">
+    <h5 class="card-title mb-2">
+      <a [routerLink]="['/product', product.id]" class="text-decoration-none text-dark">
+        {{ product.title }}
+      </a>
+    </h5>
+    <p class="card-text text-muted small mb-1">{{ product.category }}</p>
+    <p class="card-text mb-2">{{ product.description }}</p>
+    <p class="card-text fw-bold text-primary mb-3">Price: {{ product.price }} EGP</p>
+
+    <div *ngIf="product.quantity > 1" class="mb-2">
+      <button class="btn btn-accent w-100 shadow-accent" (click)="addToCart()">Add to Cart</button>
+    </div>
+    <div *ngIf="product.quantity == 1" class="mb-2 text-warning fw-bold">
+      <p class="mb-1">Only one piece available</p>
+      <button class="btn btn-warning w-100" (click)="addToCart()">Pay Now</button>
+    </div>
+    <div *ngIf="product.quantity < 1" class="mb-2 text-danger fw-bold text-center">
+      <p>Sold Out</p>
+    </div>
+
+    <div class="mt-auto d-flex justify-content-between">
+      <a [routerLink]="['/edit-product', product.id]" class="btn btn-sm btn-outline-primary">Edit</a>
+      <button class="btn btn-sm btn-outline-danger" (click)="deleteProduct()">Delete</button>
+    </div>
+  </div>
+</div>

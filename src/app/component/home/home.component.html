@@ -1,0 +1,119 @@
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1>Premium Apple Products & Accessories</h1>
+      <p>Discover the latest MacBooks, iPhones, iPads, and premium accessories curated for tech enthusiasts</p>
+      <div class="hero-buttons">
+        <button class="btn-primary" (click)="onShopNow()">Shop Now</button>
+        <button class="btn-secondary" (click)="onShopNow()">View Catalog</button>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="macbook-showcase">
+        <div class="macbook-glow"></div>
+        <img src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=600&h=400&fit=crop" alt="MacBook Pro" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats Bar -->
+  <div class="stats-bar">
+    <div class="stat-item">
+      <span class="stat-number">1000+</span>
+      <span class="stat-label">Products</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">5000+</span>
+      <span class="stat-label">Customers</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">99%</span>
+      <span class="stat-label">Satisfaction</span>
+    </div>
+  </div>
+</section>
+
+<!-- Categories Section -->
+<section class="categories-section">
+  <div class="section-header">
+    <h2>Shop by Category</h2>
+    <p>Find exactly what you're looking for</p>
+  </div>
+
+  <div class="categories-grid">
+    <div class="category-card" *ngFor="let category of categories">
+      <div class="category-icon">{{ category.icon }}</div>
+      <h3>{{ category.name }}</h3>
+      <p>{{ category.count }} products</p>
+      <button class="category-btn" (click)="onCategoryClick(category)">Explore →</button>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Products -->
+<section class="products-section">
+  <div class="section-header">
+    <h2>Featured Products</h2>
+    <p>Hand-picked items for Apple enthusiasts</p>
+  </div>
+
+  <div class="products-grid">
+    <div class="product-card" *ngFor="let product of featuredProducts">
+      <div class="product-image">
+        <img [src]="product.image" [alt]="product.name" />
+        <div class="product-overlay">
+          <button class="quick-view-btn" (click)="onQuickView(product)">Quick View</button>
+        </div>
+      </div>
+      <div class="product-info">
+        <span class="product-category">{{ product.category }}</span>
+        <h3>{{ product.name }}</h3>
+        <p class="product-price">${{ product.price | number:'1.0-0' }}</p>
+        <button class="add-to-cart-btn" (click)="onAddToCart(product)">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="features-section">
+  <div class="section-header">
+    <h2>Why Choose AuraMac?</h2>
+  </div>
+
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">🚚</div>
+      <h3>Free Shipping</h3>
+      <p>Free delivery on orders over $99</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🛡️</div>
+      <h3>Warranty Protection</h3>
+      <p>Extended warranty on all products</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">💬</div>
+      <h3>Expert Support</h3>
+      <p>24/7 customer support from Apple experts</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">⚡</div>
+      <h3>Fast Processing</h3>
+      <p>Same-day processing for all orders</p>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter Section -->
+<section class="newsletter-section">
+  <div class="newsletter-content">
+    <h2>Stay Updated</h2>
+    <p>Get the latest Apple news and exclusive offers</p>
+    <div class="newsletter-form">
+      <input type="email" placeholder="Enter your email address" class="email-input" />
+      <button class="subscribe-btn">Subscribe</button>
+    </div>
+  </div>
+</section>

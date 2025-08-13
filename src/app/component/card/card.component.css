@@ -1,0 +1,45 @@
+/* Fade in on load */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.5s ease-out both;
+}
+
+/* Product Card Styling */
+.product-card {
+  border: none;
+  border-radius: 1rem;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 12px 32px rgba(0, 70, 255, 0.3); /* Initial shadow */
+}
+
+.product-card:hover {
+  transform: scale(3); /* Whole card scales */
+  box-shadow: 0 20px 50px rgba(0, 70, 255, 0.4); /* Bigger, deeper shadow on hover */
+}
+
+/* Product Image */
+.product-image-wrapper img {
+  transition: transform 0.3s ease;
+  border-radius: 0.5rem;
+}
+
+/* Accent button */
+.btn-accent {
+  background-color: #0046FF;
+  border: none;
+  color: white;
+}
+
+.btn-accent:hover {
+  background-color: #003be6;
+}

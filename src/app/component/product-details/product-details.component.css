@@ -1,0 +1,40 @@
+:root {
+  --text-accent: #00f2b2;
+}
+
+.product-img {
+  max-height: 300px;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 242, 178, 0.2);
+}
+
+.product-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--text-accent);
+  margin-bottom: 20px;
+}
+
+.product-details li {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.text-accent {
+  color: var(--text-accent);
+}
+
+.btn-accent {
+  background-color: var(--text-accent);
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.btn-accent:hover {
+  background-color: #00cfa1;
+}

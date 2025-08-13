@@ -1,0 +1,26 @@
+<div class="container mt-5">
+  <h2>Your Shopping Cart</h2>
+
+  <div *ngIf="cartItems.length === 0">
+    <p>Your cart is empty.</p>
+  </div>
+
+  <div *ngFor="let item of cartItems" class="card mb-3">
+    <div class="card-body">
+      <h5>{{ item.title }}</h5>
+      <p>Price: {{ item.price }} EGP</p>
+
+      <div class="d-flex align-items-center">
+        <button class="btn btn-sm btn-secondary me-2" (click)="decreaseQuantity(item)">-</button>
+        <span>{{ item.quantity }}</span>
+        <button class="btn btn-sm btn-secondary ms-2" (click)="increaseQuantity(item)">+</button>
+        <button class="btn btn-danger ms-4" (click)="removeItem(item)">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="cartItems.length > 0">
+    <h4>Total: {{ getTotalPrice() }} EGP</h4>
+    <button class="btn btn-warning" (click)="clearCart()">Clear Cart</button>
+  </div>
+</div>
